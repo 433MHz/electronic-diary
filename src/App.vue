@@ -1,12 +1,12 @@
 <template>
-  <MainFrame></MainFrame>
+  <MainDiv></MainDiv>
 </template>
 
 
 <script>
-import MainFrame from './components/MainFrame.vue'
+import MainDiv from './components/MainDiv.vue'
 export default {
-  components: { MainFrame },
+  components: {MainDiv },
   
 }
 </script>
