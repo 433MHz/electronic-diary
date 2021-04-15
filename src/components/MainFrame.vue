@@ -4,7 +4,7 @@
             <div id="top"></div>
             <div id="bottom">
                 <div id="titleBar"><div id="titleBar-inside">{{title}}</div></div>
-                <buttonMainFrame></buttonMainFrame>
+                <buttonMainFrame title="Uczniowie" @click="showAlert()"></buttonMainFrame>
                 <div style="clear: both;"></div>
             </div>
         </div>
@@ -19,6 +19,12 @@ export default {
     data(){
         return{
             title: 'title'
+        }
+    },
+
+    methods:{
+        showAlert(){
+            alert("kliknieto")
         }
     }
 }
@@ -43,7 +49,7 @@ export default {
     }
 
     #titleBar{
-        background-color: lightgray;
+        background-color: rgb(233, 233, 233);
         width: 300px;
         height: 48px;
         border: gray solid 2px;

@@ -1,13 +1,19 @@
 <template>
     <div id="main">
-        <button id="buttonEdit">ghgh</button>
+        <button id="buttonEdit" v-on:click="sendClick()">{{title}}</button>
     </div>
 </template>
 
 
 <script>
 export default {
-    
+    props:['title'],
+
+    methods:{
+        sendClick(){
+            this.$emit('click')
+        }
+    }
 }
 </script>
 
