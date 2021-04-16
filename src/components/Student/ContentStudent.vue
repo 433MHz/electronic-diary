@@ -1,18 +1,33 @@
 <template>
     <div id="containerContent">
          <div id="containerContentLeftBar">
-             <button-main-frame title="Dodaj ucznia"></button-main-frame>
-             <button-main-frame title="Pokaż uczniów"></button-main-frame>
+             <button-main-frame title="Dodaj ucznia" @click="makeAllFalse(), useAddStudent = true"></button-main-frame>
+             <button-main-frame title="Pokaż uczniów" @click="makeAllFalse(), useShowStudents = true"></button-main-frame>
         </div>   
+        <add-student v-if="useAddStudent === true"></add-student>
     </div>    
 </template>
 
 
 <script>
 import buttonMainFrame from '../buttonMainFrame.vue'
+import AddStudent from './AddStudent.vue'
 export default {
-  components: { buttonMainFrame },
-    
+  components: { buttonMainFrame, AddStudent },
+
+    data(){
+        return{
+            useAddStudent: false,
+            useShowStudents: false
+        }
+    },
+
+    methods:{
+        makeAllFalse(){
+            this.useAddStudent = false,
+            this.useShowStudents = false
+        }
+    }
 }
 </script>
 

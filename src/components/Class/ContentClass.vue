@@ -1,18 +1,33 @@
 <template>
     <div id="containerContent">
          <div id="containerContentLeftBar">
-             <button-main-frame title="Dodaj klasę"></button-main-frame>
-             <button-main-frame title="Pokaż klasy"></button-main-frame>
+             <button-main-frame title="Dodaj klasę" @click="makeAllFalse(), useAddClass = true"></button-main-frame>
+             <button-main-frame title="Pokaż klasy" @click="makeAllFalse(), useShowClass = true"></button-main-frame>
         </div>   
+        <add-class v-if="useAddClass === true"></add-class>
     </div>    
 </template>
 
 
 <script>
 import buttonMainFrame from '../buttonMainFrame.vue'
+import AddClass from './AddClass.vue'
 export default {
-  components: { buttonMainFrame },
+  components: { buttonMainFrame, AddClass },
     
+    data(){
+        return{
+            useAddClass: false,
+            useShowClass: false
+        }
+    },
+
+    methods:{
+        makeAllFalse(){
+            this.useAddClass = false
+            this.useShowClass = false
+        }
+    }
 }
 </script>
 
@@ -33,5 +48,6 @@ export default {
         border: gray solid 3px;
         border-radius: 25px;
         padding-left: 20px;
+        float: left;
     }
 </style>

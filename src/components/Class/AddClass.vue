@@ -1,10 +1,10 @@
 <template>
-    <div id="AddTeacherContainer">
-        <h1>Dodaj nauczyciela</h1>
-        <input type="text" placeholder="Imie"><br>
-        <input type="text" placeholder="Nazwisko"><br>
+    <div id="AddClassContainer">
+        <h1>Dodaj klasę</h1>
+        <input type="text" placeholder="imie"><br>
+        <input type="text" placeholder="nazwisko"><br>
         <button-main-frame title="Dodaj" @click="PerformButton()"></button-main-frame>
-    </div>
+    </div>    
 </template>
 
 
@@ -12,7 +12,6 @@
 import buttonMainFrame from '../buttonMainFrame.vue'
 export default {
   components: { buttonMainFrame },
-    
     methods:{
         PerformButton(){
             alert("do something")
@@ -23,7 +22,7 @@ export default {
 
 
 <style>
-    #AddTeacherContainer input{
+    #AddClassContainer input{
         margin-top: 10px;
     }
 </style>
