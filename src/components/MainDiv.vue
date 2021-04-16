@@ -9,9 +9,9 @@
 
 
 <script>
-import ContentClass from './ContentClass.vue'
-import ContentStudent from './ContentStudent.vue'
-import ContentTeacher from './ContentTeacher.vue'
+import ContentClass from './Class/ContentClass.vue'
+import ContentStudent from './Student/ContentStudent.vue'
+import ContentTeacher from './Teacher/ContentTeacher.vue'
 import MainFrame from './MainFrame.vue'
 export default {
   components: { MainFrame, ContentTeacher, ContentStudent, ContentClass },
