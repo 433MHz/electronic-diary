@@ -1,15 +1,15 @@
 <template>
     <div id="containerContent">
          <div id="containerContentLeftBar">
-             <button-main-frame title="Dodaj ucznia"></button-main-frame>
-             <button-main-frame title="Pokaż uczniów"></button-main-frame>
+             <button-main-frame title="Dodaj klasę"></button-main-frame>
+             <button-main-frame title="Pokaż klasy"></button-main-frame>
         </div>   
     </div>    
 </template>
 
 
 <script>
-import buttonMainFrame from './buttonMainFrame.vue'
+import buttonMainFrame from '../buttonMainFrame.vue'
 export default {
   components: { buttonMainFrame },
     
