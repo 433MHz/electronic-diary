@@ -20,17 +20,18 @@ export default {
 
 <style>
     #main{
-        width: 100px;
-        height: 50px;
+        min-width: 100px;
+        min-height: 50px;
         float: left;
         text-align: center;
     }
 
     #buttonEdit{
-        width: 95px;
-        height: 30px;
+        min-width: 95px;
+        min-height: 30px;
         font-size: 15px;
         margin-top: 18px;
+        margin-left: 5px;
     }
 
     #buttonEdit:hover{

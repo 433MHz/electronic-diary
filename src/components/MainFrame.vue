@@ -4,7 +4,9 @@
             <div id="top"></div>
             <div id="bottom">
                 <div id="titleBar"><div id="titleBar-inside">{{title}}</div></div>
-                <buttonMainFrame title="Uczniowie" @click="showAlert()"></buttonMainFrame>
+                <buttonMainFrame title="Nauczyciele" @click="showTeachers()"></buttonMainFrame>
+                <buttonMainFrame title="Klasy" @click="showClasses()"></buttonMainFrame>
+                <buttonMainFrame title="Uczniowie" @click="showStudents()"></buttonMainFrame>
                 <div style="clear: both;"></div>
             </div>
         </div>
@@ -23,8 +25,19 @@ export default {
     },
 
     methods:{
-        showAlert(){
-            alert("kliknieto")
+        showTeachers(){
+            this.title = "Nauczyciele"
+            this.$emit('switchContent', 'teachers')
+        },
+
+        showClasses(){
+            this.title = "Klasy"
+            this.$emit('switchContent', 'classes')
+        },
+
+        showStudents(){
+            this.title = "Uczniowie"
+            this.$emit('switchContent', 'students')
         }
     }
 }
