@@ -7,6 +7,7 @@
                 <buttonMainFrame title="Nauczyciele" @click="showTeachers()"></buttonMainFrame>
                 <buttonMainFrame title="Klasy" @click="showClasses()"></buttonMainFrame>
                 <buttonMainFrame title="Uczniowie" @click="showStudents()"></buttonMainFrame>
+                <buttonMainFrame title="Przedmioty" @click="showSubjects()"></buttonMainFrame>
                 <div style="clear: both;"></div>
             </div>
         </div>
@@ -27,17 +28,22 @@ export default {
     methods:{
         showTeachers(){
             this.title = "Nauczyciele"
-            this.$emit('switchContent', 'teachers')
+            this.$emit('switchContent', 1)
         },
 
         showClasses(){
             this.title = "Klasy"
-            this.$emit('switchContent', 'classes')
+            this.$emit('switchContent', 2)
         },
 
         showStudents(){
             this.title = "Uczniowie"
-            this.$emit('switchContent', 'students')
+            this.$emit('switchContent', 3)
+        },
+
+        showSubjects(){
+            this.title = "Przedmioty"
+            this.$emit('switchContent', 4)
         }
     }
 }

@@ -1,9 +1,11 @@
 <template>
     <div id="containerMainDiv">
     <MainFrame @switchContent="switchContent($event)"></MainFrame>
-    <content-teacher v-if="useTeacher"></content-teacher>
-    <content-student v-if="useStudent"></content-student>
-    <content-class v-if="useClass"></content-class>
+    <content-teacher v-if="target === 1"></content-teacher>
+    <content-student v-if="target === 2"></content-student>
+    <content-class v-if="target === 3"></content-class>
+    <content-subject v-if="target === 4"></content-subject>
+    {{something}}
     </div>    
 </template>
 
@@ -13,37 +15,40 @@ import ContentClass from './Class/ContentClass.vue'
 import ContentStudent from './Student/ContentStudent.vue'
 import ContentTeacher from './Teacher/ContentTeacher.vue'
 import MainFrame from './MainFrame.vue'
+import ContentSubject from './Subjects/ContentSubject.vue'
 export default {
-  components: { MainFrame, ContentTeacher, ContentStudent, ContentClass },
+  components: { MainFrame, ContentTeacher, ContentStudent, ContentClass, ContentSubject },
 
   data(){
     return{
-      useTeacher: false,
-      useStudent: false,
-      useClass: false
+      target: 1,
+      something: ''
     }
   },
 
   methods:{
     switchContent(target){
-      if(target === 'teachers'){
-        this.useTeacher = true
-        this.useStudent = false
-        this.useClass = false
+      if(target === 1){
+        this.target = target
       }
 
-      else if(target === 'classes'){
-        this.useTeacher = false
-        this.useStudent = false
-        this.useClass = true
+      else if(target === 2){
+        this.target = target
+
       }
 
-      else if(target === 'students'){
-        this.useTeacher = false
-        this.useStudent = true
-        this.useClass = false
+      else if(target === 3){
+        this.target = target
+      }
+
+      else if(target === 4){
+        this.target = target
       }
     }
+  },
+
+  mounted(){
+    this.something = this.$store.state.flavor
   }
 }
 </script>
