@@ -2,8 +2,8 @@
     <div id="containerMainDiv">
     <MainFrame @switchContent="switchContent($event)"></MainFrame>
     <content-teacher v-if="target === 1"></content-teacher>
-    <content-student v-if="target === 2"></content-student>
-    <content-class v-if="target === 3"></content-class>
+        <content-class v-if="target === 2"></content-class>
+    <content-student v-if="target === 3"></content-student>
     <content-subject v-if="target === 4"></content-subject>
     {{something}}
     </div>    
@@ -59,5 +59,10 @@ export default {
   #containerMainDiv{
     width: 100%;
     height: 1000px
+  }
+
+  select{
+    min-width: 100px;
+    min-height: 25px;
   }
 </style>
