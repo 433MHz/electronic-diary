@@ -21,7 +21,7 @@
 import buttonMainFrame from '../buttonMainFrame.vue'
 export default {
   components: { buttonMainFrame },
-    
+   
 }
 </script>
 
