@@ -1,0 +1,15 @@
+<template>
+  <MainView></MainView>
+</template>
+
+<script>
+import MainView from './views/MainView.vue'
+export default {
+  components:{ MainView }
+  
+}
+</script>
+
+<style scoped>
+
+</style>
