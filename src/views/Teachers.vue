@@ -64,5 +64,12 @@ export default {
         padding: 20px;
         margin: 20px;
         float: left;
+        border-radius: 20px;
+        border: rgb(255, 68, 0) solid 2px;
+    }
+
+    .teacherShow:hover{
+        cursor: pointer;
+        background-color: rgba(255, 68, 0, 0.596);
     }
 </style>

@@ -17,7 +17,11 @@
 <script>
 export default {
    mounted(){
-       this.$store.dispatch('updateTeachers')
+        this.$store.dispatch('updateTeachers'),
+        this.$store.dispatch('updateStudents'),
+        this.$store.dispatch('updateSubjects'),
+        this.$store.dispatch('updateClasses')
+
    }
 }
 </script>

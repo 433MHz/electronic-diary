@@ -35,7 +35,13 @@ export default createStore({
   getters: {
     getTitle: state => {return state.title},
 
-    getTeacher: state => {return state.teachers}
+    getTeacher: state => {return state.teachers},
+
+    getStudents: state => {return state.students},
+
+    getSubjects: state => {return state.subjects},
+
+    getClasses: state => {return state.classes}
   },
 
   actions: {

@@ -1,6 +1,6 @@
 <template>
 <div id="LeftMenuBar"><LeftMenuBar :buttons="buttons" @buttonClick="buttonEvent = $event"></LeftMenuBar></div>
-<div class="Content">
+<div class="Content" v-if="buttonEvent === 1">
     <h1>Dodaj klasę</h1>
         <input type="text" placeholder="nazwa klasy" v-model="ClassName"><br>
         <div id="containerForSelect">
@@ -10,6 +10,16 @@
             </select>
         </div><br>
         <button>Dodaj</button>
+</div>
+
+<div class="Content" v-if="buttonEvent === 2">
+    <h1>Pokaż klasy</h1>
+    <div v-for="classroom in classes" :key="classroom.classID">
+        <div class="classesShow">
+            <h3>{{classroom.className}}</h3>
+            ID: {{classroom.classID}}
+        </div>
+    </div>
 </div>
 </template>
 
@@ -22,7 +32,8 @@ export default {
         return{
             buttons:[{buttonName: 'Dodaj klasę', buttonEvent: 1},
             {buttonName: 'Pokaż klasy', buttonEvent: 2}],
-            buttonEvent: ''
+            buttonEvent: 1,
+            ClassName: ''
         }
     },
 
@@ -33,6 +44,10 @@ export default {
     computed:{
         teachers: function(){
             return this.$store.getters.getTeacher
+        },
+
+        classes: function(){
+            return this.$store.getters.getClasses
         }
     }
 
@@ -51,5 +66,21 @@ export default {
 
     #containerForSelect{
         margin-top: 10px;
+    }
+
+    .classesShow{
+        background-color: rgba(21, 252, 0, 0.342);
+        width: 200px;
+        height: 100px;
+        padding: 20px;
+        margin: 20px;
+        float: left;
+        border-radius: 20px;
+        border: rgb(21, 252, 0) solid 2px;
+    }
+
+    .classesShow:hover{
+        cursor: pointer;
+        background-color: rgba(21, 252, 0, 0.596);
     }
 </style>
