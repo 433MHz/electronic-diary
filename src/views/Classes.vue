@@ -1,13 +1,12 @@
 <template>
 <div id="LeftMenuBar"><LeftMenuBar :buttons="buttons" @buttonClick="buttonEvent = $event"></LeftMenuBar></div>
-<div id="Content">
+<div class="Content">
     <h1>Dodaj klasę</h1>
         <input type="text" placeholder="nazwa klasy" v-model="ClassName"><br>
         <div id="containerForSelect">
             <label for="selectClassMaster">Wybierz wychowawcę klasy: </label><br>
-            <select name="selectClassMaster" id="selectClassMaster" v-model="OptionSelected">
-                <option value="Adam">Adam2</option>
-                <option value="Andrzej">Andrzej2</option>
+            <select name="selectClassMaster" id="selectClassMaster">
+                <option :value="teacher.teacherID" v-for="teacher in teachers" :key="teacher.teacherID">{{teacher.teacherID}} {{teacher.firstName}} {{teacher.lastName}}</option>
             </select>
         </div><br>
         <button>Dodaj</button>
@@ -29,6 +28,12 @@ export default {
 
     mounted(){
         this.$store.commit("setTitle", "Klasy")
+    },
+
+    computed:{
+        teachers: function(){
+            return this.$store.getters.getTeacher
+        }
     }
 
 }
