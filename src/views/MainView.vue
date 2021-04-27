@@ -16,7 +16,9 @@
 
 <script>
 export default {
-   
+   mounted(){
+       this.$store.dispatch('updateTeachers')
+   }
 }
 </script>
 
