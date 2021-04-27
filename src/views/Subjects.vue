@@ -1,14 +1,15 @@
 <template>
 <div id="LeftMenuBar"><LeftMenuBar :buttons="buttons" @buttonClick="buttonEvent = $event"></LeftMenuBar></div>
-<div id="Content">
+<div class="Content">
     <h1>Dodaj przedmiot</h1>
         <input type="text" placeholder="nazwa przedmiotu"><br>
         <div id="containerForSubjectMasterTeacherSelector">
 
             <div>
-                <label for="subjectMasterTeacherSelector">Nauczyciel prowadzący: </label>
+                <label for="subjectMasterTeacherSelector">Nauczyciel prowadzący: </label><br>
                 <select id="subjectMasterTeacherSelector">
-                    <option value="">Adam</option>
+                    <option v-for="teacher in teachers" :key="teacher.teacherID" :value="teacher.teacherID">
+                        {{teacher.teacherID}}. {{teacher.firstName}} {{teacher.lastName}}</option>
                 </select><br>
             </div>
             
@@ -35,8 +36,10 @@ export default {
         this.$store.commit("setTitle", "Przedmioty")
     },
 
-    methods:{
-
+    computed:{
+        teachers: function(){
+            return this.$store.getters.getTeacher
+        }
     }
 
 }
