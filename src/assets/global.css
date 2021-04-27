@@ -10,12 +10,13 @@ input, button{
     margin-top: 10px;
 }
 
-#Content{
+.Content{
     float: left;
-    margin-left: 90px;
-    min-width: 800px;
+    margin-left: 300px;
+    width: 70%;
     min-height: 600px;
     text-align: left;
+    position: absolute;
 }
 
 #LeftMenuBar{
