@@ -1,12 +1,12 @@
 <template>
     <div id="topDiv">
         <div style="height:50px"></div>
-        <div id="titleDiv">{{title}}</div>
+        <div id="titleDiv">{{$store.getters.getTitle}}</div>
         <div style="display:inline; float:left">
-        <router-link to="/leftMenuBar"><button>Nauczyciele</button></router-link>
-        <router-link to=""><button>Klasy</button></router-link>
-        <router-link to=""><button>Uczniowie</button></router-link>
-        <router-link to=""><button>Przedmioty</button></router-link>
+        <router-link :to="{name: 'Teachers'}"><button>Nauczyciele</button></router-link>
+        <router-link :to="{name: 'Classes'}"><button>Klasy</button></router-link>
+        <router-link :to="{name: 'Students'}"><button>Uczniowie</button></router-link>
+        <router-link :to="{name: 'Subjects'}"><button>Przedmioty</button></router-link>
         </div>
     </div>
     <div id="bottomDiv">
@@ -16,11 +16,7 @@
 
 <script>
 export default {
-    data(){
-        return{
-            title: 'title'
-        }
-    }
+   
 }
 </script>
 
