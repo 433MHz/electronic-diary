@@ -1,6 +1,11 @@
 <template>
 <div id="LeftMenuBar"><LeftMenuBar :buttons="buttons" @buttonClick="buttonEvent = $event"></LeftMenuBar></div>
-<div id="Content"><h1>content {{buttonEvent}}</h1></div>
+<div id="Content"> 
+    <h1>Dodaj nauczyciela</h1>
+        <input type="text" placeholder="Imie"><br>
+        <input type="text" placeholder="Nazwisko"><br>
+        <button>Dodaj</button>
+</div>
 </template>
 
 <script>
@@ -24,12 +29,5 @@ export default {
 </script>
 
 <style scoped>
-    #LeftMenuBar{
-        float: left;
-    }
-
-    #Content{
-        float: left;
-        margin-left: 50px;
-    }
+    
 </style>

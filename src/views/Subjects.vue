@@ -1,6 +1,21 @@
 <template>
 <div id="LeftMenuBar"><LeftMenuBar :buttons="buttons" @buttonClick="buttonEvent = $event"></LeftMenuBar></div>
-<div id="Content"><h1>content {{buttonEvent}}</h1></div>
+<div id="Content">
+    <h1>Dodaj przedmiot</h1>
+        <input type="text" placeholder="nazwa przedmiotu"><br>
+        <div id="containerForSubjectMasterTeacherSelector">
+
+            <div>
+                <label for="subjectMasterTeacherSelector">Nauczyciel prowadzący: </label>
+                <select id="subjectMasterTeacherSelector">
+                    <option value="">Adam</option>
+                </select><br>
+            </div>
+            
+        </div><br>
+        
+        <button>Dodaj</button>
+</div>
 </template>
 
 <script>
@@ -18,18 +33,27 @@ export default {
 
     mounted(){
         this.$store.commit("setTitle", "Przedmioty")
+    },
+
+    methods:{
+
     }
 
 }
 </script>
 
 <style scoped>
-    #LeftMenuBar{
-        float: left;
+
+    #AddStudentContainer input{
+        margin-top: 10px;
     }
 
-    #Content{
-        float: left;
-        margin-left: 50px;
+    #containerForSubjectMasterTeacherSelector{
+        margin-top: 10px;
+    }
+
+    #checkboxForMoreThanOneTeacher{
+        width: 20px;
+        height: 20px;
     }
 </style>

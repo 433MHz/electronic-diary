@@ -3,3 +3,21 @@ body{
     margin: 0;
     font-family: 'Fira Sans', sans-serif;
 }
+
+input, button{
+    width: 200px;
+    height: 25px;
+    margin-top: 10px;
+}
+
+#Content{
+    float: left;
+    margin-left: 90px;
+    min-width: 800px;
+    min-height: 600px;
+    text-align: left;
+}
+
+#LeftMenuBar{
+    float: left;
+}
