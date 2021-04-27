@@ -1,7 +1,7 @@
 <template>
     <div id="menu">
         <div v-for="button in buttons" :key="button">
-            <button>{{button.buttonName}}</button>
+            <button @click="ReturnButtonEvent(button.buttonEvent)">{{button.buttonName}}</button>
         </div>
     </div>
 </template>
@@ -10,14 +10,16 @@
 export default {
     data(){
         return{
-            buttons:[
-                {buttonName: "testowy", buttonEvent: "asd"},
-                {buttonName: "testowy", buttonEvent: "asd"},
-                {buttonName: "testowy", buttonEvent: "asd"},
-                {buttonName: "testowy", buttonEvent: "asd"},
-                {buttonName: "testowy", buttonEvent: "asd"}
-                ]
             }
+    },
+
+    props:['buttons'],
+
+    methods:{
+        ReturnButtonEvent(buttonEvent){
+            this.$emit('buttonClick', buttonEvent)
+            console.log(buttonEvent)
+        }
     }
 }
 </script>
@@ -36,4 +38,6 @@ export default {
         min-height: 30px;
         margin: 5px;
     }
+
+    
 </style>
